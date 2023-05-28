@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({
+      token: "fffa906919cb44d29d28c3e04789e055"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+
+</head>
+<body>
+  <button onclick="throw new Error('errorMsg')">clickToTrigErr</button>
+
+</body>
+</html>

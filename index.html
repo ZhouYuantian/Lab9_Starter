@@ -71,8 +71,8 @@
     <section id="error-btns">
       <button>Console Log</button>
       <button>Console Error</button>
-      <button>Console Count</button>
       <button>Console Warn</button>
+      <button>Console Count</button>
       <button>Console Assert</button>
       <button>Console Clear</button>
       <button>Console Dir</button>
@@ -99,9 +99,44 @@
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-
     // Start your code here
     // You may move this JS to another file if you wish
+    errorBtns[0].onclick=function (){console.log("console log")};
+    errorBtns[1].onclick=function (){console.error("console error")};
+    errorBtns[2].onclick=function (){console.warn("console war")};
+    errorBtns[3].onclick=function (){console.count()};
+    errorBtns[4].onclick=function (){console.assert(false,"assert")};
+    errorBtns[5].onclick=function (){console.clear()};
+    errorBtns[6].onclick=function (){console.dir(document.location)};
+    errorBtns[7].onclick=function (){console.dirxml(document.location)};
+    errorBtns[8].onclick=function (){console.group()};
+    errorBtns[9].onclick=function (){console.groupEnd()};
+    errorBtns[10].onclick=function (){console.table(["table"])};
+    errorBtns[11].onclick=function (){console.time("timer")};
+    errorBtns[12].onclick=function (){console.timeEnd("timer")};
+    errorBtns[13].onclick=function (){console.trace()};
+    errorBtns[14].onclick=function (){call_something_undefined();};
+
+    function tryCatError()
+    {
+      try{
+        throw new customError("customErrorMsg");
+      }catch(e)
+      {
+        alert(e.message);
+      }finally
+      {
+        alert("try catch final");
+      }
+    }
+
+    class customError extends Error {
+      constructor(message) {
+        super(message); // (1)
+        this.name = "customError"; // (2)
+      }
+    }
+
   </script>
 </body>
 
